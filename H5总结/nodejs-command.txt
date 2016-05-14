@@ -1,0 +1,111 @@
+========================node.js===========================
+
+1.bash 输入node 出现  ’>‘
+  node -v出现node.js的版本号
+2.b/s系统；
+浏览器/服务端
+
+chrome浏览器//两个内核 webkit v8 
+
+webkit:页面布局，解析样式
+v8:JS解析器
+硬件层：
+
+node.js
+
+底层基于c
+libuv > libev >连接c/c++ > 硬件层
+
+客户端JS（ECMA/DOM/BOM）
+核心为ECMA
+DOM/BOM是浏览器自己封装的
+
+在node.js里面只有ECMA，没有BOM DOM window
+
+ECMA 
+znode.js的API:process os file buffer util queryting
+node.js特色：没有兼容性问题;可运行ecma6;
+
+node.js方法：
+
+1.moudle.exports=name;(导出模块)
+
+2.require()引入模块
+====================  npm  ===========================
+npm install -g
+
+npm adduser 创建账号
+
+第三方模块：
+
+npm install+模块名称（下载第三方模块到本地）
+
+自定义模块发行到npm
+
+npm init （初始化）
+（含有：package.son;index.js;README.md）
+npm publish （发行上传）
+
+npm unpublish+模块名称@版本号（删除发行）
+
+sudo npm -g hexo  （全局下下载安装hero）
+
+======================= github ======================
+windows下载git for windows
+
+创建github账号
+
+1.添加repositories
+
+2.设置github的sshkey;
+  命令：ssh-keygen;
+  命令：vim ~/.ssh/id_rsa.pub
+  这个key每生成一次就需要重新绑定；换机器也需要重新绑定；是github给我们的安全机制
+把得到的ssh-key复制出来
+  :q(退出复制界面)
+
+添加到github的对应位置
+
+3.git clone+ssh地址，就可以把我们的repositories下载到本地
+  git status 查看当前的仓库的状态
+
+4.修改更新：
+	git config --global user.name "Your Name"
+	git config --global user.email "email@example.com"
+（首次上传时需要配置本地信息）
+5.上传到暂存区
+	git add . 
+	git commit -m “日志”
+6.上传到github:
+	git remote add origin git@github.com:yourname/learngit.git
+	git push -u origin master
+
+======================== hexo 博客 =======================
+
+1.安装hexo
+	soda npm install -g hero
+2.初始化hexo
+	hexo init
+3.添加第三方模块
+	npm install hexo-deployer-git --save
+4.把github创建的repositories的http://地址写入到_config.yml文件尾部的deploy中；
+	deploy:git;
+	repo:https://github.com/chencunming1234/chencunming1234.github.io.git
+5.返回终端运行
+	hexo g
+	hexo d
+	hexo n == hexo new
+	hexo g == hexo generate
+	hexo p == hexo publish
+	hexo s == hexo server
+	hexo d == hexo deploy
+6.卸载插件
+	npm uninstall
+  
+		
+ 
+
+
+		
+
+

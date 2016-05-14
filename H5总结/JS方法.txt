@@ -1,0 +1,361 @@
+一；获取元素的方法：
+  obj.getElementById("");
+  obj.getElementByName();通过元素的name来获取标签；返回一个数组
+  obj.getElementsByTagName("")//返回一个元素的集合
+  obj.getElementByClassName("")//返回一个元素的集合
+  document.querySelector("#wrapper")取得DOM中第一个ID为"wrapper"的元素
+  document.querySelectorAll(".class1")取得DOM中所有class为"class1"的元素
+  obj.tagName
+  getComputedStyle(obj).width
+  obj.currentStyle.width
+  
+
+二；事件
+  1，鼠标事件
+  onclick
+  ondblcilck
+ 
+  onmouseover
+  onmouseout
+  onmousedown
+  onmouseup
+  onmousemove
+  onmouseleave
+  onmouseenter
+
+  onchang
+  onerror
+
+  onload
+  
+  2.onload
+  3.onchang
+  4.onsubmit
+  5.onreset  //窗口可视区变化的时候
+  6.onscroll //滚动条滚动的时候
+  7.onresize
+  8.onfocus
+  9.onblur
+ 10. ev.cancelBubble=true
+ 11.onkeyup onkeydown keycode altcode ctrlcode shiftcode
+ 12.oncontextmenu//鼠标右键事件
+ 13.jquery中事件的写法：
+  绑定事件：.on("click mousemove",fn)
+  取消绑定事件： .off("click");
+ 14.scrollTop()//滚动的距离
+ 15.ev.pageX:相对于文档的距离
+    ev.clientX相对于可视区的距离
+    ev.which//keycode
+    ev.preventDefault()
+    ev.stopPropagation()
+    return false()//阻止默认事件+阻止冒泡的操作
+ 16.可执行一次的事件
+    .one("click",function(){alert(123)})
+ 
+三；内容操作
+  
+  document.write();
+
+  obj.innerHTML=""
+  obj.className=""
+  obj.value=""
+  obj.style.cssText="widht:200px;height:200px";与写style一样
+  aLi[i].style.background = arr[i%arr.length];//隔arr.length行变色
+  
+四；数据类型
+  eval()//把字符串转换成可执行的代码
+  
+  typeof()
+  str.charAt()
+  str.charCodeAt()//获得编码
+  str.formCharCode(编码)//获得内容
+  indexOf("s",2)//从第2位开始查找“s”;如果第2个值为负数，默认当成0来处理
+  lastIndexOf
+  str.substring(-2,3)//-2当成0处理
+  str.substring(-4,-2)//负数从后面算
+  str.toUpperCase()//转成大写
+  str.toLowerCase()//转成小写
+  str.split("."，3)//按“.”把字符串拆成数组，返回3个数组
+  str.reverse();把全部字符倒过来
+  str.replace("1","2")//把1替换成2
+  arr.join("")把数组转成字符串
+
+
+  var arr=new Array();
+  var arr=[]
+  arr.unshift("")//返回数组的长度
+  arr.push("")//返回数值的长度
+  arr.shift("");//返回删除的元素
+  arr.pop("");//返回删除的元素
+ 
+  arr.unshift(arr.pop());//把删除的元素添加到头
+  arr.push(arr.shift());把删除的头元素添加到尾部
+  arr.splice(2,3,"");从第2位开始删除3个元素并添加" "的内容
+  arr.length
+  arr.soft(softNamber)
+  function softNamner(a,b){return a-b}//从小到大
+  arr.concat(arr2,arr3)//str.concat(str1,str2)
+  
+  isNaN（）//可判断一个数据是不是数字
+
+  var json={
+	name:"miaov",
+	age:5
+  }//att与att.value之间用":"隔开；数据用“，”隔开；
+
+  for(var att in json){
+	att//
+	json[att]//
+}
+
+  Number()//转换为数据类型
+  parseInt()//转换为整型
+  parseFloat()//转换为浮点型
+  Boolean()//转换成布尔值
+  toString()
+  string()
+  
+  隐式数据转换：
+  + //转换成字符
+  - * / % ++ --//转换成数字
+  > < //转换为布尔值
+  ！取反
+  ==
+五；定时器,时间 
+  var timer=setInterval(fn,毫秒)
+  clearInterval(timer)
+  var timer=setTimeout(fn,毫秒)
+  clearTimeout(timer)
+
+  var mytime=new Date();
+  var nomwtime=newDate("2018/1/1")
+  mytime.getFullYear();
+  mytime.getMonth();
+  mytime.getDate();
+  mytime.getDay();
+  mytime.getHours();
+  mytime.getMinutes();
+  mytime.getseconds();
+  mytime.getMilliseconds();
+  mytime.getTime()//从1970年1月1日到现在的毫秒数
+
+  oDate.toGMTString()把一个时间转换成字符串格式  
+
+五；Math函数
+  Math.floor()
+  Math.random()
+  Math.round()
+  Math.ceil()
+  Math.max()
+  Math.min()
+
+六.DOM
+  nodeName
+  nodeValue
+  nodeType
+  
+  children//所有是标签的子节点。一个集合
+  parentNode
+  nextSibling
+  previousSibling
+  firstChild
+  lastChilad
+ 
+  var oli=document.createElement("li")//创建一个标签
+  document.body.appendChild(oli)
+  
+  var att=document.createAttribute("class")//创建一个class
+  att.value="div1"//这个创建出来的属性class的值为div1;
+  obj.setAttributeNode(att)
+  obj.setAttribute("class","div1")
+
+  var oText=document.createTextNode("内容")
+  document.body.appendChild(oText)
+
+  obj.appendChild("")
+  obj.insertBefore("","")
+  obj.replaceChild("","") 
+  
+  obj.getAttribute("class");获取class的属性值 
+  obj.removeAttribute("class");
+
+
+  obj.childNodes.length
+  node.type
+  this.parentNode.style.display="none"
+  offsetWidth;
+  clientWidth;
+  scrollTop
+  obj.getAttribute("className")
+  obj.setAttribute("class","div1")
+  document.createElement("li")
+   parentobj.removeChild(this)
+   parentobj.appendChild(oa)
+   parentobj.children(0);
+   parentobj.replaceChild("需要替代的","被替代的")
+   insertBefore("","")
+七;BOM
+  document.documentElement.clientHeight||document.body.clientHeight
+  document.innerWidth||document.documentElement.clientgWidth||document.body.clientWidth
+  window.alert()
+  window.comfirm()//带确定取消的警告框
+  window.prompt("text","可以输入的地方")//带有文字输入的警告框
+  
+  window.close()
+  window.moveTo();
+  window.resizeTo();
+  window.open(url,name,features,replace)
+  
+  window.navigator.userAgent.indexOf('MSIE')
+  window.location : 地址
+  window.location.href = window.location内容
+  window.location.hash//设置或返回从#开始的url
+  window.location.hostname//返回web主机的域名
+  window.location.pathname//返回当前页面的路径和文件名
+  window.location.port返回web主机的端口
+  window.location.protocol返回所使用web协议
+  window.location.search = url?后面的内容
+  window.location.hash = url#后面的内容
+  window.location.hash 
+  window.status
+  
+  window.history.back()
+  window.history.foward()
+  document.documentElement.clinetHeight//可视区的高度
+  document.documentElement.scrollTop
+  scrollHeight//内容的实际高度
+ 
+  window.screen
+window.screen.availWidth 返回当前屏幕宽度(空白空间) 
+window.screen.availHeight 返回当前屏幕高度(空白空间) 
+window.screen.width 返回当前屏幕宽度(分辨率值) 
+window.screen.height 返回当前屏幕高度(分辨率值) 
+window.document.body.offsetHeight; 返回当前网页高度 
+window.document.body.offsetWidth; 返回当前网页宽度
+八.正则表达示
+  var str="";
+  var reg=new regExp(  ,gim);第一个参数为表达式，第三个值为g/i/m：全局/区分大小写/多行
+  
+||var reg=/正则表达式/gim
+   str.match(reg)//返回匹配结果，没有找到返回null
+   reg.test(str)//返回true/false
+   str.replace(reg,"t")
+   str.search(reg)//返回找到内容的索引；没有查到则返回-1；
+
+  规则：
+  .：查找单个字符，除了换行和结束符
+  \w:查找单词字符
+  \d:查找数字
+  \s:查找空白字符
+  \b:匹配单词边界
+  \n:查找换行符
+  \u匹配汉字
+  检测中文：var reg=/[\u4e00-\u9fa5]/g==>alert(reg.test(str))
+
+  [abc]
+  [^abc]
+  [0-9] 
+  [a-z]
+  [A-z]
+
+  n+:匹配至少一个n的字符串
+  n*:匹配包含零个或多个n的字符串
+  n?:匹配任何包含零个或一个的字符
+  n{x}:匹配x个n的字符串
+  n{x,y}包含x到y个的字符串
+  ^n:匹配以n开头的字符串
+  n$:匹配以n结尾的字符串
+  
+九.jquery
+
+   选择器：
+ 元素选择器 $("#box p")
+ ID选择器   $("text")
+ 类选择器   $(".text")
+  $("*")
+  $(this)
+  $("p.intro")//选择class为intro的p元素
+  $("p:first")//
+  $("ul li:first")
+  $("ul li:first-child")
+  $("[href]")选择带有href属性的博茨瓦纳
+  $("a[target='_blank']")//选择所有target属性值等于“_blank”的a元素
+  $("a[target!='_blank']")//选择所有target属性值不等于“_blank”的a元素//注意是不等于
+  $(":button")选取所有type=“button”的<input>元素
+  $("tr:even")选取偶数位置的tr元素
+  $("tr:odd")选取奇数位置的tr元素
+
+  .find()
+  .first()
+  .ep(2);//找到index==2的元素
+
+  
+  .css()
+  .css({name:val,name:val})//可以是一个json
+  .attr()   
+
+  .html()
+  .val()
+  .text()
+  .click()
+  .children()
+  .width()
+  .innerWidth()
+  .outWidth()
+  .attr()
+  .filter()//选中（)里的选择器
+  .hac()//不要选中（）里面的选择器、
+  .next()
+  .find()找到()里面的选择器
+  .index()//找到当前元素所在的所有兄弟节点中的位置
+
+  .addClass()
+  .removeClass()
+  .toggleClass()
+
+  .width()
+  .innerWidth()
+  .outerWidth(true)//添加参数true后，==width+padding+border+margin
+  .insertBefore()
+  .insertAfter()
+  .appendTo()
+  .prependTo()
+  .append()选元素的结尾插入的内容
+  .prepend()在被选元素的开头插入内容 
+
+  .remove()删除被选元素及其子元素
+  .empty()删除被选元素及其子元素
+
+  .offset().left//获取到屏幕的左距离
+  .position().left()到有定位的父级的left值，把当前的元素转化成类似定位的形式；
+  .parent()//获取父级
+  .offsetParent()获取有定位的父级
+ 
+
+  .size()//像length
+  
+  $(#div).hide(speed,callback)隐藏当前的元素
+  .show(speed,callback)显示当前的元素
+  .toggle(speed,callback);//来回的切换隐藏显示元素
+  
+  .fadeIn(speed,callback)//speed可选时间，关键字【slow,fast,】;callback参数是动画完成后可执行的函数
+  .fadeOut(speed,callback)
+  .fadeToggle(speed,callback)
+  .fadeTo(speed,opacity,callback)
+  .slideDown(speed,callback)
+  .slideUp(speed.callback)
+  .slideToggle(speen,callback)
+
+  .animate({params},speed,callback)
+  .stop(stopAll,goToEnd)//两个参数都是布尔值
+
+  .ready(function(){
+
+    主程序；
+	})//防止文档还没加载完成就运行，这样会报错
+  
+  
+  
+
+   
+  

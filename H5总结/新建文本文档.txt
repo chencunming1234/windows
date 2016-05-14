@@ -1,0 +1,13 @@
+1.remove 与 detach的区别
+
+2.布局居中问题
+
+3.indexOf()  search()
+
+4.事件冒泡
+
+scrollTop
+
+5，事件的兼容性写法
+
+6.白斑

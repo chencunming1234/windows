@@ -1,0 +1,56 @@
+http://oa.lanou3g.com/     蓝欧科技
+
+
+http://www.w3school.com.cn/   w3school
+
+http://www.divcss5.com/jiqiao/j4.shtml  DIV规范命名 
+
+http://www.cnblogs.com/xuwenmin888/p/3410980.html   CSS垂直居中问题 
+
+
+http://pxtoem.com/   像素单位转换
+
+http://www.17sucai.com/    html5素材
+
+http://www.cnblogs.com/    博客园
+ 
+http://css.doyoe.com/      css参考手册
+
+http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html   Flex
+
+http://blog.csdn.net/xiebaochun/article/details/38382169 offset/client教程
+
+http://www.cnblogs.com/top5/archive/2010/08/23/1806389.html 详解offset/client
+
+http://www.cnblogs.com/yuteng/articles/1894578.html  详解offset/client
+
+https://www.npmjs.com/    npm官网
+
+http://25.io/mou/      markdown官网
+
+http://m.blog.csdn.net/article/details?id=8000622    GIT命令
+
+http://www.cnblogs.com/chuncn/archive/2008/10/09/1307321.html   DIV居中
+
+https://github.com/amfe/lib-flexible   阿里开源的自适应方案
+
+https://github.com/flashlizi/cssrem    cssrem//把px转成rem、
+
+touch.code.baidu.com   touch.js库
+
+www.swiper.com.cn      swiper中文网
+
+www.runoob.com         菜鸟网
+
+query.chishifeng.cn    jquery帮助
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,129 @@
+1.JS里面不允许出现“-”，background-color=>backgroundColor;第二个单词首字大写
+
+2.所有的相对路径不能作为判断条件/颜色值也不行/背景也不行
+
+3.this指这个：指的是调用当前方法（函数）的那个对象
+
+4.能为任何的元素添加任意个自定义属性==>各种数据类型
+
+5.选项卡清空属性：1、所有选项清空；2、清空上一个var that=this 
+
+6.obj.style.witdth===obj.style[width];[]里的值可改变
+
+7.continue与break
+
+8.return：返回值
+	1) 函数名+括号：fn1()	==>  return 后面的值；
+	2) 所有函数默认返回值：未定义；
+	3) return 后面任何代码都不执行了；
+9.arguments
+  实参的集合;具有length,下标等 属性
+
+10.DOM
+  元素.childNodes : 只读 属性 子节点列表集合
+  标准下：包含了文本和元素类型的节点，也会包含非法嵌套的子节点
+  非标准下：只包含元素类型的节点，ie7以下不会包含非法嵌套子节点
+			
+  childNodes只包含一级子节点，不包含后辈孙级以下的节点
+
+  DOM节点的类型有很多种	12种
+		
+  元素.nodeType : 只读 属性 当前元素的节点类型
+		
+  元素节点:	1
+  属性节点:	2
+  文本节点:	3
+  
+  元素.children : 只读 属性 子节点列表集合
+  标准下：只包含元素类型的节点
+  非标准下：只包含元素类型的节点
+
+  元素.firstChild : 只读 属性 第一个子节点
+  标准下：firstChild会包含文本类型的节点
+
+
+  非标准下：只包含元素节点
+  元素.parentNode : 只读 属性 当前节点的父级节点
+
+  元素.firstElementChild : 只读 属性 标准下获取第一个元素类型的子节点
+  元素.offsetParent : 只读 属性 离当前元素最近的一个有定位属性的父节点
+  如果没有定位父级，默认是body
+  ie7以下，如果当前元素没有定位默认是body，如果有定位则是html  
+  ie7以下，如果当前元素的某个父级触发了layout，那么offsetParent就会被指向到这个触发了layout特性的父节点上
+  
+  	元素.offsetLeft[Top] : 只读 属性 当前元素到定位父级的距离（偏移值）
+	到当前元素的offsetParent的距离
+	如果没有定位父级
+	offsetParent -> body
+	offsetLeft -> html
+			
+	如果有定位父级
+	ie7以下：如果自己没有定位，那么offsetLeft[Top]是到body的距离
+	如果自己有定位，那么就是到定位父级的距离
+	其他：到定位父级的距离
+	function getPos(obj) {
+		
+		var pos = {left:0, top:0};
+		
+		while (obj) {
+			pos.left += obj.offsetLeft;
+			pos.top += obj.offsetTop;
+			obj = obj.offsetParent;
+		}
+		
+		return pos;
+		
+	}
+11.
+  父级.removeChild(要删除的元素); 删除元素
+  父级.insertBefore(新的元素，被插入的元素) 方法 在指定元素前面插入一个新元素
+  在ie下如果第二个参数的节点不存在，会报错
+  在其他标准浏览器下如果第二个参数的节点不存在，则会以appendChild的形式进行添加
+  父级.replaceChild(新节点，被替换节点) 替换子节点
+
+12.BOM
+window.close();
+		
+ff : 无法关闭
+chrome : 直接关闭
+ie : 询问用户
+
+13.事件
+ie：obj.attachEvent(事件名称，事件函数);
+	1.没有捕获
+	2.事件名称有on
+	3.事件函数执行的顺序：标准ie-》正序   非标准ie-》倒序
+	4.this指向window
+标准：obj.addEventListener(事件名称，事件函数，是否捕获);
+	1.有捕获
+	2.事件名称没有on
+	3.事件执行的顺序是正序
+	4.this触发该事件的对象	
+
+14.定时器，
+  虽然清除了定时器，但是每一次点击都会启动一次函数，一样会有一次的移动
+  不要同时开同样的几个定时器，注意在开定时器把原来的定时器关了
+
+15.return false阻止的是obj.on事件所触发的事件//addEventListener绑定的事件需要通过event对象下面的preventDefaule()来阻止；
+
+16.cookies
+
+cookie : 存储数据，当用户访问了某个网站（网页）的时候，我们就可以通过cookie来像访问者电脑上存储数据
+	1.不同的浏览器存放的cookie位置不一样，也是不能通用的
+	2.cookie的存储是以域名形式进行区分的
+	3.cookie的数据可以设置名字的
+	4.一个域名下存放的cookie的个数是有限制的，不同的浏览器存放的个数不一样
+	5.每个cookie存放的内容大小也是有限制的，不同的浏览器存放大小不一样
+	
+	我们通过document.cookie来获取当前网站下的cookie的时候，得到的字符串形式的值，他包含了当前网站下所有的cookie。他会把所有的cookie通过一个分号+空格的形式串联起来
+	
+	如果我们想长时间存放一个cookie。需要在设置这个cookie的时候同时给他设置一个过期的时间
+	cookie默认是临时存储的，当浏览器关闭进程的时候自动销毁
+
+	document.cookies="name=val";
+	document.cookies="usename=leo"
+	
+	cookies过期时候的设计
+	document.cookies="名字=值；expires="+字符串格式的时间//
+	把一个时装转换为字符串格式：odate.toGTMString()
+17.闭包：把变量私有化

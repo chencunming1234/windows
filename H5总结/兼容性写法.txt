@@ -1,0 +1,118 @@
+1.获取元素的scrollTop;
+
+var nowTop=document.body.scrollTop||document.documentElement.scrollTop;
+
+
+
+判断:if(document.body.scrollTop){
+	表达式
+} else{
+	表达式
+}
+
+2.无缝滚动
+
+function move(){
+	if(wrap.offsetLeft<=-wrap.offsetWidth/2)
+{
+	wrap.style.left=0;	
+}else if(wrap.offsetLeft>=0)
+{
+	wrap.style.left=-wrap.offsetWidth/2+"px";
+
+}
+进行两个判断；
+
+3.事件对象的获取
+
+obj.onclick=function(e){
+
+	var ev=e||window.event;
+}
+
+4.绑定事件
+
+非IE：obj.addEventListener("click",fn,false)
+IE:obj.attachEvent("click"，"fn")
+
+5.移除绑定事件
+
+非IE：obj.removeEventListener("click",fn,false)
+IE:obj.detachEvent("click",listener);
+
+绑定写法：
+if(obj.attachEvent){
+	表达式
+}
+if(obj.addEventListener){
+	表达式
+}
+移除写法：
+
+if(obj.detachEvent){
+	表达式
+}
+if(obj.removeEventListener){
+	表达式
+}
+
+6.获取window尺寸
+	
+IE6\7\8:
+document.documentElement.clientHeight
+
+其它：document.body.clientHeight
+
+
+兼容写法：var widths=document.documentElement.clientHeight||document.body.clinetHeight
+
+7.节点关系的兼容性写
+	
+    在IE下支持firstChild/lastChild/nextSiling/previousSibling
+    在FF下，由于它会把标签之间的间隔当作文本节点，所以要这样号firstElementChild/lastElementChild/nextElementSibling/previousElementSibling
+
+兼容写法：
+    var oFirst=oParent.firstElementChild||oParent.firstChild
+
+    其它项目同理加一个Element,用||连接
+
+8.获取计算后的样式属性
+
+    obj.currentStyle.width:在IE Opera下是可行的
+
+    getComputedStyle(obj,null).width:支持标准浏览器（FF12,Chrome14,safari）
+
+兼容写法：
+
+	function getStyle(node){
+	var style=null;
+	if(window.getComputedStyle){
+	style=window.getComputedStyle(node,null)}
+	else{
+	style=node.currentStyle;
+	}
+	reture style
+}
+
+9.鼠标滚轮事件
+    
+    在火狐下：obj.addEventListener("DOMMousescroll",fn,false)
+    其它浏览器：obj.onmousewheel=fn;
+
+    兼容写法：先判断是不是炎狐浏览器
+	var ff=window.navigator.userAgent.indexOf("Firefox")
+
+	if(ff==-1){
+	    obj.mousewheel=function(e){
+	    var ev=e||window.evnet;
+	    console.log(ev.whellDelta)//whellDelta判断滚动的方向：向下是-120；向上是+120
+	}
+	}
+	else{
+	    obj.addEventListener("DOMMousescroll",fn,false)
+	    function(e){
+	    var ev=e||window.event
+	    console.log(ev.detail)//detail判断滚动的方向：向下是+3；向上是-3
+	}
+	}
+
